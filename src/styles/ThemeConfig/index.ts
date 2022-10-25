@@ -7,7 +7,6 @@ import { createTheme } from "@mui/material/styles";
 import { colourPalette } from "./colourPalette";
 import { componentOverrides } from "./componentOverrides";
 import { typography } from "./typography";
-
 export const Layouts = { main: { maxWidth: "1110px" } };
 
 declare module "@mui/material/styles" {
@@ -34,4 +33,7 @@ const theme = createTheme({
   typography: typography,
 });
 
-export default responsiveFontSizes(theme, { factor: 2 });
+export default responsiveFontSizes(
+  theme,
+  { factor: 2 }
+);

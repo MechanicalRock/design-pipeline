@@ -21,12 +21,14 @@
     "@mui/material": "^5.10.10",
     "@mui/system": "^5.10.10",
     "@mui/x-date-pickers": "^5.0.5",
+    "lodash": "^4.17.21",
     "next": "^12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.3.1",
+    "@types/lodash": "^4.14.186",
     "@types/node": "^18.11.5",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",

@@ -1,4 +1,5 @@
 import { PaletteOptions } from "@mui/material/styles";
+import { getPaletteProps } from "./processTokenFile";
 
 export const COLOURS = {
   primary: {
@@ -40,4 +41,9 @@ export const COLOURS = {
   border: "#E0E0E0",
 };
 
-export const colourPalette: PaletteOptions = { ...COLOURS };
+const figmaTokenPalette = getPaletteProps();
+
+export const colourPalette: PaletteOptions = {
+  ...COLOURS,
+  ...figmaTokenPalette as any,
+};
