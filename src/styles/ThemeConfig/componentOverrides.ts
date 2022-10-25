@@ -1,6 +1,5 @@
-import { COLOURS } from "./colourPalette";
 import { Components } from "@mui/material/styles";
-import { dataLayerPush } from "../../components/Analytics";
+import { COLOURS } from "./colourPalette";
 // import type {} from "@mui/x-data-grid/themeAugmentation";
 // import type {} from "@mui/x-data-grid-pro/themeAugmentation";
 
@@ -196,17 +195,6 @@ export const componentOverrides: Components = {
   },
   MuiTable: { styleOverrides: { root: { borderColor: "pink" } } },
   MuiTab: {
-    defaultProps: {
-      onClick: (e) => {
-        const buttonText = e.currentTarget.textContent;
-        if (buttonText) {
-          dataLayerPush({
-            event: "tab",
-            tabName: buttonText.toLowerCase(),
-          });
-        }
-      },
-    },
     styleOverrides: {
       root: {
         color: COLOURS.primary.main,
