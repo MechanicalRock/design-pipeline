@@ -1,16 +1,16 @@
 import { set } from "lodash";
 import tokens from "../../../tokens.json";
 
-const rootProperty = "";
+const rootProperty = "global";
 
-function getSafeToken() {
+function getSafeToken(): any {
   if (typeof tokens === "undefined") {
     return {
       palette: {},
       typography: {},
     };
   }
-  return tokens[rootProperty];
+  return tokens[rootProperty as keyof typeof tokens];
 }
 
 export function getPaletteProps() {
