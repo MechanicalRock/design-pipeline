@@ -13,7 +13,9 @@ function BoxWithFullScreen({ children }: { children: React.ReactChild }) {
       data-fullscreen={fullScreen}
       sx={{
         padding: 4,
-        width: fullScreen ? "calc(100% - 1em)" : "100%",
+        width: fullScreen
+          ? "calc(100% - 1em)"
+          : "100%",
         margin: "0 auto",
         maxWidth: "28em",
         background: "white",

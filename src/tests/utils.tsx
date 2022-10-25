@@ -25,7 +25,10 @@ export function getFieldInputValue(testid: string, value: string) {
 
 export async function setFieldInputByEl(el: HTMLInputElement, value: string) {
   await waitFor(() => {
-    fireEvent.change(el, { target: { value } });
+    fireEvent.change(
+      el,
+      { target: { value } }
+    );
   });
 
   await waitFor(() => {
@@ -35,7 +38,10 @@ export async function setFieldInputByEl(el: HTMLInputElement, value: string) {
 
 export async function setFieldInputById(testid: string, value: string) {
   const el = getFieldInput(testid)!;
-  await setFieldInputByEl(el, value);
+  await setFieldInputByEl(
+    el,
+    value
+  );
 }
 
 const ignoreKeys = ["userId"];
@@ -44,7 +50,10 @@ export async function TestFormFields(
   scenario: "SCHEMA" | "INITIAL FIELD" | "SET FIELD" | "VALIDATE"
 ) {
   const keys = Object.keys(schema.fields);
-  const requiredFieldNames = getRequiredFieldNames(schema, keys);
+  const requiredFieldNames = getRequiredFieldNames(
+    schema,
+    keys
+  );
 
   switch (scenario) {
     case "SCHEMA": {
@@ -78,16 +87,17 @@ export async function TestFormFields(
             value = `mocked-${fieldName}`;
             break;
         }
-        await setFieldInputById(testId, value);
+        await setFieldInputById(
+          testId,
+          value
+        );
       }
       break;
     }
     case "VALIDATE": {
       for (const fieldName of requiredFieldNames) {
         const testId = `field-${fieldName}`;
-        expect(
-          screen.queryByTestId(testId)!.textContent?.includes("is required")
-        ).not.toBeNull();
+        expect(screen.queryByTestId(testId)!.textContent?.includes("is required")).not.toBeNull();
       }
       break;
     }
@@ -102,9 +112,7 @@ function getRequiredFieldNames(schema: AnyObjectSchema, keys: string[]) {
     }
     if (!ignoreKeys.includes(fieldName)) {
       const field = schema.fields[fieldName as keyof AnyObjectSchema];
-      return field.tests.some(
-        (t: any) => t.OPTIONS.name === "required" && t.OPTIONS.exclusive
-      );
+      return field.tests.some((t: any) => t.OPTIONS.name === "required" && t.OPTIONS.exclusive);
     }
   });
 }

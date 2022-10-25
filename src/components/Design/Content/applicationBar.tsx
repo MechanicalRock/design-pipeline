@@ -24,8 +24,16 @@ import { alpha, styled } from "@mui/material/styles";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": { backgroundColor: alpha(theme.palette.common.white, 0.25) },
+  backgroundColor: alpha(
+    theme.palette.common.white,
+    0.15
+  ),
+  "&:hover": {
+    backgroundColor: alpha(
+      theme.palette.common.white,
+      0.25
+    ),
+  },
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
@@ -36,7 +44,10 @@ const Search = styled("div")(({ theme }) => ({
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(
+    0,
+    2
+  ),
   height: "100%",
   position: "absolute",
   pointerEvents: "none",
@@ -48,7 +59,12 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
+    padding: theme.spacing(
+      1,
+      1,
+      1,
+      0
+    ),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
@@ -213,7 +229,8 @@ export default function AppBar() {
               component="div"
               sx={{
                 display: {
-                  xs: "none", sm: "block",
+                  xs: "none",
+                  sm: "block",
                 },
               }}
             >
@@ -231,7 +248,8 @@ export default function AppBar() {
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{
               display: {
-                xs: "none", md: "flex",
+                xs: "none",
+                md: "flex",
               },
             }}
             >
@@ -273,7 +291,8 @@ export default function AppBar() {
             </Box>
             <Box sx={{
               display: {
-                xs: "flex", md: "none",
+                xs: "flex",
+                md: "none",
               },
             }}
             >

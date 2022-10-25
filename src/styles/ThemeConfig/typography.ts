@@ -1,5 +1,5 @@
-import { COLOURS } from "./colourPalette";
 import { TypographyOptions } from "@mui/material/styles/createTypography";
+import { COLOURS } from "./colourPalette";
 
 export const typography: TypographyOptions = {
   // fontSize: 16,
