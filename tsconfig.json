@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "useUnknownInCatchVariables": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/design/*": [
+        "src/components/Design/*"
+      ],
+      "@/tests/*": [
+        "src/tests/*"
+      ],
+      "@/client/*": [
+        "src/client/*"
+      ],
+      "@/actions/*": [
+        "src/actions/*"
+      ],
+      "@/api/v1/*": [
+        "src/pages/api/v1/*"
+      ],
+      "@mui/*": [
+        "node_modules/@mui/*"
+      ]
+    },
+    "incremental": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "cypress"
+  ]
+}

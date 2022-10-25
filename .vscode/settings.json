@@ -1,0 +1,35 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#EEEE9f",
+    "activityBar.activeBorder": "#483918",
+    "activityBar.background": "#EEEE9f",
+    "activityBar.foreground": "#000000",
+    "activityBar.inactiveForeground": "#00000099",
+    "sash.hoverBorder": "#EEEE9f",
+    "statusBar.background": "#EEEE9f",
+    "statusBar.foreground": "#000000",
+    "statusBarItem.hoverBackground": "#EEEE9f",
+    "statusBarItem.remoteBackground": "#EEEE9f",
+    "statusBarItem.remoteForeground": "#000000",
+    "titleBar.activeBackground": "#EEEE9f",
+    "titleBar.activeForeground": "#000000",
+    "titleBar.inactiveBackground": "#EEEE9f99",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "commandCenter.border": "#e7e7e799"
+  },
+  "peacock.color": "#EEEE9f",
+  "importSorter.generalConfiguration.sortOnBeforeSave": false,
+  "importSorter.sortConfiguration.removeUnusedDefaultImports": true,
+  "importSorter.sortConfiguration.removeUnusedImports": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true,
+  },
+}
