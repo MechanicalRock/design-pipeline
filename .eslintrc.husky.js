@@ -118,17 +118,7 @@ module.exports = {
       },
     ],
     "comma-style": [ "error", "last" ],
-    "no-restricted-imports": [
-      "error",
-      {
-        patterns: [
-          "@mui/*/*/*",
-          "!@mui/material/test-utils/*",
-          "!@mui/x-data-grid/**/*",
-          "!@mui/x-data-grid-pro/**/*",
-        ],
-      },
-    ],
+    "no-restricted-imports": [ "error", { patterns: [ "!@mui/material/test-utils/*", "!@mui/x-data-grid/**/*" ] }],
     "semi": [
       "error",
       "always",
