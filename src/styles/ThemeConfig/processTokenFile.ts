@@ -1,4 +1,6 @@
-import { set } from "lodash";
+import {
+  cloneDeep, get, set
+} from "lodash";
 import tokens from "../../../tokens.json";
 
 const rootProperty = "global";
@@ -13,8 +15,40 @@ function getSafeToken(): any {
   return tokens[rootProperty as keyof typeof tokens];
 }
 
+const validPaletteColours = [
+  "primary",
+  "secondary",
+  "error",
+  "warning",
+  "info",
+  "success",
+  "mode",
+  "tonalOffset",
+  "contrastThreshold",
+  "common",
+  "grey",
+  "text",
+  "divider",
+  "action",
+  "background",
+];
+
+function loopbackToValidProp(figmaTokenPalette: Record<string, any>, propList: string[]) {
+  const propExists = get(
+    figmaTokenPalette,
+    propList,
+    false
+  );
+
+  if (!propExists) {
+    propList.pop();
+  }
+  return;
+}
+
 export function getPaletteProps() {
   const figmaTokenPalette = getSafeToken().palette;
+  const result = cloneDeep(figmaTokenPalette);
   let propList: string[] = [];
 
   // Iterate through the palette object until the "value" prop is found,
@@ -22,22 +56,35 @@ export function getPaletteProps() {
   const iterate = (obj: any) => {
     Object.keys(obj).forEach((key) => {
       const value = obj[key];
+      // If key is a root colour, reset the propList
+      if (validPaletteColours.includes(key)) {
+        propList = [key];
+      }
       // Has nested object
       if (typeof value === "object") {
         propList.push(key);
+        // Check if key belongs in this nest
+        loopbackToValidProp(
+          figmaTokenPalette,
+          propList
+        );
         iterate(value);
       } else if (key === "value" && typeof value === "string" && value.length > 0) {
         // Merge {value} -> [parent]
         set(
-          figmaTokenPalette,
+          result,
           propList,
           value
         );
-        propList = [];
+        propList.pop();
       }
     });
   };
 
   iterate(figmaTokenPalette);
-  return figmaTokenPalette;
+  console.log(
+    "result: ",
+    result
+  );
+  return result;
 }
