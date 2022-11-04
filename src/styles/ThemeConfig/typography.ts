@@ -1,7 +1,8 @@
 import { TypographyOptions } from "@mui/material/styles/createTypography";
 import { COLOURS } from "./colourPalette";
+import { getTypographyProps } from "./processTokenFile";
 
-export const typography: TypographyOptions = {
+const baseTypography: TypographyOptions = {
   // fontSize: 16,
   allVariants: {
     fontFamily: "DMSans, sans-serif",
@@ -51,4 +52,11 @@ export const typography: TypographyOptions = {
     fontWeight: 700,
     fontSize: "0.875rem",
   },
+};
+
+const figmaTokenTypography = getTypographyProps();
+
+export const typography: TypographyOptions = {
+  ...baseTypography,
+  ...figmaTokenTypography as any,
 };

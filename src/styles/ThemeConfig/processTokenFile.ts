@@ -82,9 +82,54 @@ export function getPaletteProps() {
   };
 
   iterate(figmaTokenPalette);
-  console.log(
-    "result: ",
-    result
-  );
+  // console.log(
+  //   "getPaletteProps = ",
+  //   result
+  // );
+  return result;
+}
+
+export function getTypographyProps() {
+  const figmaTokenPalette = getSafeToken().typography;
+  const result = cloneDeep(figmaTokenPalette);
+  let propList: string[] = [];
+
+  // Iterate through the palette object until the "value" prop is found,
+  // then merge it back to the parent node
+  const iterate = (obj: any) => {
+    Object.keys(obj).forEach((key) => {
+      const value = obj[key];
+      // If key is a root colour, reset the propList
+      if (validPaletteColours.includes(key)) {
+        propList = [key];
+      }
+      // Has nested object
+      if (typeof value === "object") {
+        if (key === "value" && typeof value === "object") {
+          // Merge {value} -> [parent]
+          set(
+            result,
+            propList,
+            value
+          );
+          propList.pop();
+        } else {
+          propList.push(key);
+          // Check if key belongs in this nest
+          loopbackToValidProp(
+            figmaTokenPalette,
+            propList
+          );
+          iterate(value);
+        }
+      }
+    });
+  };
+
+  iterate(figmaTokenPalette);
+  // console.log(
+  //   "getTypographyProps = ",
+  //   result
+  // );
   return result;
 }
