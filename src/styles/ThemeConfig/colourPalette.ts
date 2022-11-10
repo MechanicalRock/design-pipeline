@@ -1,7 +1,7 @@
 import { PaletteOptions } from "@mui/material/styles";
 import { getPaletteProps } from "../../../figmaTokens-to-mui/getPaletteProps";
 
-export const COLOURS = {
+const BASE_COLOURS = {
   primary: {
     light: "#3A8FA3",
     main: "#123347",
@@ -43,7 +43,9 @@ export const COLOURS = {
 
 const figmaTokenPalette = getPaletteProps();
 
-export const colourPalette: PaletteOptions = {
-  ...COLOURS,
-  ...figmaTokenPalette as any,
+export const COLOURS = {
+  ...BASE_COLOURS,
+  ...figmaTokenPalette,
 };
+
+export const colourPalette: PaletteOptions = COLOURS;

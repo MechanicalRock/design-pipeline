@@ -5,11 +5,11 @@ import { COLOURS } from "./colourPalette";
 const baseTypography: TypographyOptions = {
   // fontSize: 16,
   allVariants: {
-    fontFamily: "DMSans, sans-serif",
+    fontFamily: "sans-serif",
     color: "#333",
   },
   button: {
-    fontFamily: "DMSansBold, sans-serif",
+    fontFamily: "sans-serif",
     lineHeight: "1.5rem",
   },
   h1: {

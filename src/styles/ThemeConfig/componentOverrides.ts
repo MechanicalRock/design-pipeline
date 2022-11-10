@@ -1,41 +1,9 @@
 import { Components } from "@mui/material/styles";
 import { COLOURS } from "./colourPalette";
-// import type {} from "@mui/x-data-grid/themeAugmentation";
-// import type {} from "@mui/x-data-grid-pro/themeAugmentation";
-
-const DataGridProps = { MuiDataGrid: { styleOverrides: { columnHeaderTitle: { fontFamily: "DMSansBold" } } } } as any;
 
 export const componentOverrides: Components = {
   MuiCssBaseline: {
     styleOverrides: `
-      @font-face {
-        font-family: "DMSans";
-        src: url("/fonts/DMSans-Regular.ttf");
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "DMSansBold";
-        src: url("/fonts/DMSans-Bold.ttf");
-        font-style: normal;
-        font-weight: bold;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "DMSansMedium";
-        src: url("/fonts/DMSans-Medium.ttf");
-        font-style: normal;
-        font-weight: bold;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "DMSansItalic";
-        src: url("/fonts/DMSans-Italic.ttf");
-        font-style: italic;
-        font-weight: normal;
-        font-display: swap;
-      }
       @font-face {
         font-family: "LeagueGothic";
         src: url("/fonts/LeagueGothic-Regular.otf");
@@ -49,10 +17,10 @@ export const componentOverrides: Components = {
       body: {
         padding: 0;
         margin: 0;
-        fontFamily: "DMSans, sans-serif";
+        fontFamily: "sans-serif";
       }
       strong: {
-        fontFamily: "DMSansBold, sans-serif";
+        fontFamily: "sans-serif";
       }
       a: {
         color: "inherit";
@@ -89,7 +57,6 @@ export const componentOverrides: Components = {
       }
     `,
   },
-  ...DataGridProps,
   MuiLink: { defaultProps: { underline: "hover" } },
   MuiMobileStepper: {
     styleOverrides: {
@@ -135,16 +102,7 @@ export const componentOverrides: Components = {
       },
     },
   },
-  MuiListItemText: {
-    styleOverrides: {
-      root: {
-        "& > span": {
-          fontFamily: "DMSansBold",
-          fontSize: "0.875rem",
-        },
-      },
-    },
-  },
+  MuiListItemText: { styleOverrides: { root: { "& > span": { fontSize: "0.875rem" } } } },
   MuiListItemIcon: {
     styleOverrides: {
       root: {
