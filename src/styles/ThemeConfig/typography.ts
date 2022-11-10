@@ -1,6 +1,6 @@
 import { TypographyOptions } from "@mui/material/styles/createTypography";
+import { getTypographyProps } from "../../../figmaTokens-to-mui/getTypographyProps";
 import { COLOURS } from "./colourPalette";
-import { getTypographyProps } from "./processTokenFile";
 
 const baseTypography: TypographyOptions = {
   // fontSize: 16,

@@ -1,5 +1,5 @@
 import { PaletteOptions } from "@mui/material/styles";
-import { getPaletteProps } from "./processTokenFile";
+import { getPaletteProps } from "../../../figmaTokens-to-mui/getPaletteProps";
 
 export const COLOURS = {
   primary: {
