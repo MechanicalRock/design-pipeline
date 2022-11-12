@@ -1,7 +1,7 @@
-import { PaletteOptions } from "@mui/material/styles";
-import { getPaletteProps } from "../../../figmaTokens-to-mui/getPaletteProps";
+import { getPaletteProps } from "@mechanicalrock/figma-tokens-to-mui";
+import tokens from "../../../tokens.json";
 
-const BASE_COLOURS = {
+const baseColours: Record<string, object | string> = {
   primary: {
     light: "#3A8FA3",
     main: "#123347",
@@ -41,11 +41,8 @@ const BASE_COLOURS = {
   border: "#E0E0E0",
 };
 
-const figmaTokenPalette = getPaletteProps();
-
-export const COLOURS = {
-  ...BASE_COLOURS,
-  ...figmaTokenPalette,
-};
-
-export const colourPalette: PaletteOptions = COLOURS;
+export const colourPalette = getPaletteProps(
+  tokens,
+  "global",
+  baseColours
+);

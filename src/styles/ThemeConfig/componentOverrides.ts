@@ -1,5 +1,5 @@
 import { Components } from "@mui/material/styles";
-import { COLOURS } from "./colourPalette";
+import { colourPalette } from "./colourPalette";
 
 export const componentOverrides: Components = {
   MuiCssBaseline: {
@@ -42,7 +42,7 @@ export const componentOverrides: Components = {
       input:-webkit-autofill: {
         boxShadow: "0 0 0 50px white inset";
         margin: "0.1em";
-        textFillColor: ${COLOURS.text.primary},
+        textFillColor: ${colourPalette.text.primary},
       }
       input:-internal-autofill-selected: {
         box-shadow: 0 0 0px 1000px #ffffff inset;
@@ -70,11 +70,11 @@ export const componentOverrides: Components = {
   MuiTooltip: {
     styleOverrides: {
       tooltip: {
-        backgroundColor: COLOURS.primary.main,
+        backgroundColor: colourPalette.primary.main,
         padding: "1em",
         fontSize: "0.8em",
       },
-      arrow: { color: COLOURS.primary.main },
+      arrow: { color: colourPalette.primary.main },
     },
   },
   MuiButton: {
@@ -88,16 +88,16 @@ export const componentOverrides: Components = {
         fontSize: "1.125em",
       },
       contained: {
-        backgroundColor: COLOURS.primary.main,
+        backgroundColor: colourPalette.primary.main,
         color: "#FFF",
 
         "&.white": {
           backgroundColor: "#FFF",
-          color: COLOURS.primary.main,
+          color: colourPalette.primary.main,
         },
       },
       containedSecondary: {
-        backgroundColor: COLOURS.secondary.main,
+        backgroundColor: colourPalette.secondary.main,
         color: "#FFF",
       },
     },
@@ -140,7 +140,7 @@ export const componentOverrides: Components = {
       },
     },
   },
-  MuiRadio: { styleOverrides: { root: { "& .MuiSvgIcon-root": { color: COLOURS.primary.main } } } },
+  MuiRadio: { styleOverrides: { root: { "& .MuiSvgIcon-root": { color: colourPalette.primary.main } } } },
   MuiFormControlLabel: {
     styleOverrides: {
       root: {
@@ -155,7 +155,7 @@ export const componentOverrides: Components = {
   MuiTab: {
     styleOverrides: {
       root: {
-        color: COLOURS.primary.main,
+        color: colourPalette.primary.main,
         textTransform: "none",
         fontSize: "1rem",
         letterSpacing: "0.044em",
@@ -188,7 +188,7 @@ export const componentOverrides: Components = {
       root: {
         zIndex: 0,
         // color: "#3C3C3C",
-        "&.MuiSvgIcon-colorSuccess": { color: COLOURS.success.main },
+        "&.MuiSvgIcon-colorSuccess": { color: colourPalette.success.main },
         "&.MuiSvgIcon-secondary": { color: "#0D6EFDC9" },
       },
     },
@@ -237,7 +237,7 @@ export const componentOverrides: Components = {
       colorPrimary: {
         color: "#9E9E9E",
 
-        "&.Mui-checked": { color: COLOURS.primary.main },
+        "&.Mui-checked": { color: colourPalette.primary.main },
       },
       colorSecondary: {
         color: "#FFF",

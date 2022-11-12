@@ -1,6 +1,7 @@
+import { getTypographyProps } from "@mechanicalrock/figma-tokens-to-mui";
 import { TypographyOptions } from "@mui/material/styles/createTypography";
-import { getTypographyProps } from "../../../figmaTokens-to-mui/getTypographyProps";
-import { COLOURS } from "./colourPalette";
+import tokens from "../../../tokens.json";
+import { colourPalette } from "./colourPalette";
 
 const baseTypography: TypographyOptions = {
   // fontSize: 16,
@@ -17,7 +18,7 @@ const baseTypography: TypographyOptions = {
     letterSpacing: "-0.7px",
     fontSize: "2.25rem",
     marginBottom: "1.5rem",
-    color: COLOURS.primary.main,
+    color: colourPalette.primary.main,
   },
   h2: {
     fontWeight: 700,
@@ -48,15 +49,14 @@ const baseTypography: TypographyOptions = {
   link: {
     textDecoration: "underline",
     cursor: "pointer",
-    color: COLOURS.secondary.dark,
+    color: colourPalette.secondary.dark,
     fontWeight: 700,
     fontSize: "0.875rem",
   },
 };
 
-const figmaTokenTypography = getTypographyProps();
-
-export const typography: TypographyOptions = {
-  ...baseTypography,
-  ...figmaTokenTypography as any,
-};
+export const typography: TypographyOptions = getTypographyProps(
+  tokens,
+  "global",
+  baseTypography
+);
